@@ -1412,6 +1412,7 @@ textarea {
 a {
   color: #44da82;
   text-decoration: none;
+  font-weight: 400;
 }
 a:hover, a:focus {
   color: #23af5d;
@@ -7676,13 +7677,12 @@ p {
 }
 .fh5co-accordion .fh5co-accordion-head .fh5co-accordion-toggle {
   position: absolute;
-  top: 50%;
-  margin-top: -13px;
+  bottom: 1.7em;
   right: 0;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: 700;
-  font-size: 12px;
+  letter-spacing: 1px;
+  font-weight: 400;
+  font-size: .9em;
 }
 .fh5co-accordion .fh5co-accordion-head > h3 {
   font-size: 18px;
@@ -7704,7 +7704,7 @@ p {
   display: none;
   float: left;
   width: 100%;
-  padding-left: 3.6em;
+  padding-top: 1em;
 }
 
 .fh5co-counter {
