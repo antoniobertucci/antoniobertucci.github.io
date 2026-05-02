@@ -39,7 +39,7 @@ export const experiences = [
     ],
   },
   {
-    period: 'Between Novoda and Glovo',
+    period: 'Jun 2020 — Mar 2022',
     company: 'Zalando',
     role: 'Engineering Manager',
     location: 'Berlin, Germany',
