@@ -1,0 +1,17 @@
+{
+  "name": "antoniobertucci.github.io",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "build:root": "astro build && rm -rf _astro && cp -R dist/* .",
+    "preview": "astro preview",
+    "check": "astro check"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.9",
+    "astro": "^5.8.1",
+    "typescript": "^5.8.3"
+  }
+}
