@@ -39,6 +39,20 @@ export const experiences = [
     ],
   },
   {
+    period: 'Between Novoda and Glovo',
+    company: 'Zalando',
+    role: 'Engineering Manager',
+    location: 'Berlin, Germany',
+    description:
+      'Your public LinkedIn profile shows an Engineering Manager role at Zalando, and the public recommendation attached to that period highlights a servant leadership style, strong team health, and cross-functional collaboration.',
+    bullets: [
+      'Led a mobile engineering team in a broader cross-functional environment.',
+      'Built trust and psychological safety, helping maintain morale and retention during a period of high uncertainty.',
+      'Supported strongly collaborative ways of working across organisational boundaries, with product managers, designers, and engineers working as one team.',
+      'Was recognised by peers for rapid growth, thoughtful leadership, and a high-performing team culture.',
+    ],
+  },
+  {
     period: '2018 — 2019',
     company: 'Novoda',
     role: 'Engineering Manager',
