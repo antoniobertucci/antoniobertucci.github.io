@@ -1,18 +1,15 @@
 :root {
-  --bg: #0b1020;
-  --bg-2: #11162a;
-  --surface: rgba(17, 24, 39, 0.78);
-  --surface-strong: rgba(15, 23, 42, 0.96);
-  --text: #eef2ff;
-  --muted: #9aa4bf;
-  --muted-strong: #c7d2fe;
-  --border: rgba(148, 163, 184, 0.18);
-  --accent: #60a5fa;
-  --accent-2: #22d3ee;
-  --accent-soft: rgba(96, 165, 250, 0.14);
-  --shadow: 0 24px 70px rgba(2, 6, 23, 0.42);
-  --radius: 22px;
-  --radius-sm: 16px;
+  --bg: #fafafa;
+  --surface: #ffffff;
+  --surface-muted: #fcfcfc;
+  --text: #111111;
+  --muted: #666666;
+  --muted-strong: #444444;
+  --border: #eaeaea;
+  --accent: #111111;
+  --accent-soft: rgba(17, 17, 17, 0.04);
+  --shadow: 0 12px 40px rgba(17, 17, 17, 0.05);
+  --radius: 20px;
   --max-width: 1120px;
 }
 
@@ -28,21 +25,18 @@ body {
   margin: 0;
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: var(--text);
-  background:
-    radial-gradient(circle at top left, rgba(34, 211, 238, 0.12), transparent 24%),
-    radial-gradient(circle at top right, rgba(96, 165, 250, 0.16), transparent 28%),
-    linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 52%, #0a0f1d 100%);
-  line-height: 1.65;
+  background: linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
+  line-height: 1.6;
 }
 
 a {
   color: inherit;
-  text-decoration-color: rgba(96, 165, 250, 0.38);
+  text-decoration-color: #cfcfcf;
   text-underline-offset: 0.18em;
 }
 
 a:hover {
-  text-decoration-color: var(--accent);
+  text-decoration-color: #999999;
 }
 
 img {
@@ -57,18 +51,18 @@ main {
 }
 
 .section {
-  padding: 1.9rem 0;
+  padding: 2rem 0;
 }
 
 .section-heading {
   display: grid;
   gap: 0.45rem;
-  margin-bottom: 1.35rem;
+  margin-bottom: 1.4rem;
 }
 
 .eyebrow {
-  color: var(--accent-2);
-  font-size: 0.8rem;
+  color: var(--muted);
+  font-size: 0.78rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
@@ -87,20 +81,20 @@ h3 {
 }
 
 h1 {
-  font-size: clamp(2.9rem, 6vw, 5.8rem);
-  line-height: 0.92;
-  letter-spacing: -0.06em;
+  font-size: clamp(3rem, 6vw, 5.8rem);
+  line-height: 0.9;
+  letter-spacing: -0.08em;
   max-width: 10ch;
 }
 
 h2 {
-  font-size: clamp(1.4rem, 3vw, 2.15rem);
-  letter-spacing: -0.04em;
-  line-height: 1.02;
+  font-size: clamp(1.35rem, 3vw, 2.1rem);
+  letter-spacing: -0.05em;
+  line-height: 1;
 }
 
 h3 {
-  font-size: 1.08rem;
+  font-size: 1.03rem;
   letter-spacing: -0.03em;
   line-height: 1.25;
 }
@@ -108,7 +102,7 @@ h3 {
 p,
 li {
   color: var(--muted);
-  font-size: 1rem;
+  font-size: 0.98rem;
 }
 
 strong {
@@ -118,56 +112,54 @@ strong {
 .hero {
   display: grid;
   gap: 1.5rem;
-  padding: 2.4rem 0 2.7rem;
+  padding: 2.8rem 0 2.6rem;
 }
 
 .hero-shell {
   display: grid;
   gap: 1rem;
-  grid-template-columns: 1.5fr 0.8fr;
+  grid-template-columns: 1.55fr 0.8fr;
   align-items: stretch;
 }
 
 .hero-copy {
   display: grid;
   gap: 1rem;
-  padding: 1.1rem 0.15rem;
+  padding: 0.5rem 0.1rem;
 }
 
 .hero-copy::after {
   content: '';
-  width: 7rem;
-  height: 2px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--accent-2), var(--accent), transparent);
-  margin-top: 0.25rem;
+  width: 6rem;
+  height: 1px;
+  background: var(--border);
+  margin-top: 0.4rem;
 }
 
 .hero-note {
   display: inline-flex;
   align-items: center;
-  gap: 0.55rem;
+  gap: 0.5rem;
   width: fit-content;
-  padding: 0.46rem 0.8rem;
+  padding: 0.44rem 0.76rem;
   border: 1px solid var(--border);
   border-radius: 999px;
-  background: rgba(15, 23, 42, 0.55);
+  background: var(--surface);
   color: var(--muted-strong);
-  font-size: 0.88rem;
+  font-size: 0.86rem;
 }
 
 .hero-note::before {
   content: '';
-  width: 0.55rem;
-  height: 0.55rem;
+  width: 0.48rem;
+  height: 0.48rem;
   border-radius: 999px;
-  background: linear-gradient(180deg, var(--accent-2), var(--accent));
-  box-shadow: 0 0 18px rgba(34, 211, 238, 0.35);
+  background: var(--text);
 }
 
 .hero-tagline {
-  max-width: 52rem;
-  font-size: clamp(1.06rem, 2vw, 1.32rem);
+  max-width: 50rem;
+  font-size: clamp(1.04rem, 2vw, 1.28rem);
   color: var(--muted-strong);
 }
 
@@ -186,11 +178,11 @@ strong {
   justify-content: center;
   gap: 0.45rem;
   border-radius: 999px;
-  padding: 0.82rem 1.08rem;
+  padding: 0.8rem 1.04rem;
   border: 1px solid transparent;
   font-weight: 600;
   text-decoration: none;
-  transition: transform 120ms ease, background 120ms ease, border-color 120ms ease, color 120ms ease, box-shadow 120ms ease;
+  transition: transform 120ms ease, background 120ms ease, border-color 120ms ease, color 120ms ease;
 }
 
 .button:hover {
@@ -198,28 +190,26 @@ strong {
 }
 
 .button-primary {
-  background: linear-gradient(135deg, var(--accent-2), var(--accent));
-  color: #07111f;
-  box-shadow: 0 10px 28px rgba(96, 165, 250, 0.28);
+  background: var(--text);
+  color: #ffffff;
 }
 
 .button-secondary {
-  background: rgba(15, 23, 42, 0.5);
+  background: var(--surface);
   border-color: var(--border);
   color: var(--text);
 }
 
 .hero-card,
 .card {
-  background: linear-gradient(180deg, rgba(15, 23, 42, 0.96), rgba(17, 24, 39, 0.82));
-  backdrop-filter: blur(16px);
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
 }
 
 .hero-card {
-  padding: 1.3rem;
+  padding: 1.25rem;
 }
 
 .profile {
@@ -228,24 +218,24 @@ strong {
 }
 
 .profile img {
-  width: 96px;
-  height: 96px;
-  border-radius: 22px;
+  width: 88px;
+  height: 88px;
+  border-radius: 18px;
   object-fit: cover;
-  border: 1px solid rgba(148, 163, 184, 0.22);
+  border: 1px solid var(--border);
 }
 
 .profile dl {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.9rem;
+  gap: 0.85rem;
   margin: 0;
 }
 
 .profile dt {
   color: var(--muted);
-  font-size: 0.78rem;
-  margin-bottom: 0.2rem;
+  font-size: 0.76rem;
+  margin-bottom: 0.15rem;
 }
 
 .profile dd {
@@ -277,7 +267,7 @@ strong {
 }
 
 .metric strong {
-  font-size: 1.28rem;
+  font-size: 1.22rem;
   letter-spacing: -0.03em;
 }
 
@@ -288,7 +278,7 @@ strong {
 
 .timeline-item {
   display: grid;
-  gap: 0.9rem;
+  gap: 0.85rem;
   padding: 1.2rem;
 }
 
@@ -302,7 +292,7 @@ strong {
 
 .timeline-period {
   font-size: 0.9rem;
-  color: var(--accent-2);
+  color: var(--muted-strong);
 }
 
 .badge {
@@ -314,26 +304,26 @@ strong {
   border-radius: 999px;
   background: var(--accent-soft);
   color: var(--muted-strong);
-  font-size: 0.83rem;
+  font-size: 0.82rem;
   font-weight: 600;
-  border: 1px solid rgba(96, 165, 250, 0.18);
+  border: 1px solid var(--border);
 }
 
 .bullets {
   display: grid;
-  gap: 0.55rem;
+  gap: 0.5rem;
   padding-left: 1rem;
   margin: 0;
 }
 
 .bullets li::marker {
-  color: var(--accent);
+  color: #999999;
 }
 
 .project-card,
 .writing-card {
   display: grid;
-  gap: 0.78rem;
+  gap: 0.75rem;
 }
 
 .inline-meta {
@@ -342,8 +332,8 @@ strong {
 }
 
 .callout {
-  padding: 1.25rem;
-  background: linear-gradient(180deg, rgba(11, 16, 32, 0.98), rgba(15, 23, 42, 0.92));
+  padding: 1.2rem;
+  background: var(--surface-muted);
 }
 
 .footer {
@@ -353,7 +343,7 @@ strong {
   justify-content: space-between;
   padding: 2rem 0 0;
   color: var(--muted);
-  font-size: 0.92rem;
+  font-size: 0.9rem;
 }
 
 @media (max-width: 900px) {
@@ -374,7 +364,7 @@ strong {
   }
 
   .hero {
-    padding-top: 1rem;
+    padding-top: 1.2rem;
   }
 
   .hero-card,
