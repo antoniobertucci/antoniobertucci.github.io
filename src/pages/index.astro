@@ -1,0 +1,175 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import { education, experiences, profile, projects } from '../data/profile';
+
+const description = `${profile.name} — ${profile.title}. Minimalist personal website rebuilt with Astro using updated public profile content.`;
+---
+
+<MainLayout title="Antonio Bertucci — Engineering leader" description={description}>
+  <main>
+    <header class="site-header">
+      <a class="site-title" href="#top">Antonio Bertucci</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Work</a>
+      </nav>
+      <a class="site-link" href={profile.links.linkedin} target="_blank" rel="noreferrer">LinkedIn ↗</a>
+    </header>
+
+    <section class="hero section" id="top">
+      <div class="hero-shell">
+        <div class="hero-copy">
+          <span class="hero-note">{profile.company}</span>
+          <div class="section-heading">
+            <span class="eyebrow">{profile.location}</span>
+            <h1>{profile.name}</h1>
+            <h2>{profile.title}</h2>
+          </div>
+          <p class="hero-tagline">{profile.intro}</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href={profile.links.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+            <a class="button button-secondary" href={profile.links.github} target="_blank" rel="noreferrer">GitHub</a>
+            <a class="button button-secondary" href={profile.links.resume} target="_blank" rel="noreferrer">Resume</a>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <div class="profile">
+            <img src="/profile.jpg" alt="Antonio Bertucci" />
+            <div>
+              <h3>{profile.name}</h3>
+              <p>{profile.location}</p>
+            </div>
+            <dl>
+              {profile.highlights.map((item) => (
+                <div class="metric">
+                  <dt>{item.label}</dt>
+                  <dd><strong>{item.value}</strong></dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="section-heading">
+        <span class="eyebrow">About</span>
+        <h2>Leadership, delivery, and engineering leverage</h2>
+      </div>
+      <div class="summary-list">
+        {profile.summary.map((paragraph) => (
+          <p>{paragraph}</p>
+        ))}
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="section-heading">
+        <span class="eyebrow">Experience</span>
+        <h2>Selected roles across product, platform, and mobile</h2>
+      </div>
+      <div class="timeline">
+        {experiences.map((item) => (
+          <article class="timeline-item">
+            <div class="timeline-top">
+              <div>
+                <h3>{item.role} · {item.company}</h3>
+                {item.location && <p class="inline-meta">{item.location}</p>}
+              </div>
+              <span class="timeline-period">{item.period}</span>
+            </div>
+            <p>{item.description}</p>
+            <ul class="bullets">
+              {item.bullets.map((bullet) => <li>{bullet}</li>)}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="section-heading">
+        <span class="eyebrow">Selected work</span>
+        <h2>Projects and product environments I helped shape</h2>
+      </div>
+      <div class="stack-list">
+        {projects.map((project) => (
+          <article class="stack-item project-card">
+            <div class="project-meta">
+              <span class="badge">{project.period}</span>
+            </div>
+            <div class="stack-body">
+              <div>
+                <h3>{project.name}</h3>
+                <p>{project.description}</p>
+              </div>
+              <div>
+                <a href={project.link} target="_blank" rel="noreferrer">Visit project ↗</a>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="section" id="education">
+      <div class="grid-2">
+        <div>
+          <div class="section-heading">
+            <span class="eyebrow">Education</span>
+            <h2>Academic background</h2>
+          </div>
+          <div class="timeline">
+            {education.map((item) => (
+              <article class="timeline-item compact-item">
+                <div class="timeline-top">
+                  <h3>{item.degree}</h3>
+                  <span class="timeline-period">{item.period}</span>
+                </div>
+                <p><strong>{item.school}</strong></p>
+                <p>{item.detail}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <div class="section-heading">
+            <span class="eyebrow">More</span>
+            <h2>Languages, recognition, and contact</h2>
+          </div>
+          <div class="callout">
+            <div class="section-heading">
+              <span class="eyebrow">Languages</span>
+              <div class="link-row">
+                {profile.languages.map((language) => (
+                  <span class="badge">{language}</span>
+                ))}
+              </div>
+            </div>
+            <div class="section-heading">
+              <span class="eyebrow">Recognition</span>
+              <p>{profile.award}</p>
+            </div>
+            <div class="section-heading">
+              <span class="eyebrow">Contact</span>
+              <p>If you want to talk about engineering leadership, product delivery, platform work, or an interesting opportunity, the best place to start is LinkedIn.</p>
+              <div class="link-row">
+                <a class="button button-primary" href={profile.links.linkedin} target="_blank" rel="noreferrer">Connect on LinkedIn</a>
+                <a class="button button-secondary" href={profile.links.github} target="_blank" rel="noreferrer">GitHub profile</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>Built as a minimal personal site with Astro.</span>
+      <span>Content refreshed from the existing site plus current professional notes.</span>
+    </footer>
+  </main>
+</MainLayout>

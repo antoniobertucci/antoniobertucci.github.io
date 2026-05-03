@@ -1,2 +1,7 @@
-# IDEA files
+# IDE files
 .idea/
+
+# Node / Astro
+node_modules/
+.astro/
+dist/
